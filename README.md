@@ -5,11 +5,15 @@ Installer script for COSMOS
 
 **Step 1** : clone the installer scripts
 
-open the terminal and make sure you are in your home folder (by default cosmos installs in the home folder of the current user). Clone the installer repository into the 'cosmos' folder.
+open the terminal and make sure you are in your home folder by entering the command
 ```
 #!shell
-$ cd
-$ git clone https://cosmos@bitbucket.org/cosmos/installer-linux-mac.git cosmos
+cd
+```
+by default cosmos installs in the home folder of the current user. Clone the installer repository into the 'cosmos' folder.
+```
+#!shell
+git clone https://cosmos@bitbucket.org/cosmos/installer-linux-mac.git cosmos
 ```
 
 **Step 2** : configure cosmos-setup.sh file
@@ -41,8 +45,7 @@ check that the bin folder was created inside the 'cosmos' folder (if not check t
 
 ```
 #!shell
-
-$ ls
+ls
 **bin**              Dockerfile  lib    README.md  scripts  tmp
 cosmos-setup.sh  include     nodes  resources  src
 
@@ -61,8 +64,7 @@ finally, execute the cosmos agent command
 
 ```
 #!shell
-
-$ agent
+agent
 Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ arguments ]" ]
 
 ```
