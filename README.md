@@ -36,7 +36,7 @@ bitbucketUserName='put-your-user-name-here'
 developer='no'
 ```
 
-You must at least change the 'bitbucketUserName' to be able to download the COSMOS repositories that you have access to with your bitbucket account. For faster downloads use 'no' for 'developer', 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download). If you haven't gotten access to the COSMOS repositories go to: http://cosmos-project.org/getting-started.php. Make sure to change the 
+You must at least change the 'bitbucketUserName' to be able to download the COSMOS repositories that you have access to with your bitbucket account. For faster downloads use 'no' for 'developer', 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download). If you haven't gotten access to the COSMOS repositories go to: http://cosmos-project.org/getting-started.php. Make sure to save the file.
 
 
 **Step 3** : run cosmos-setup.sh
