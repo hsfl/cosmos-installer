@@ -2,10 +2,10 @@
 
 cosmosFolder=~/cosmos
 cosmosBuild='yes'
-dockerBuild='yes'
-dockerRun='yes'
+dockerBuild='no'
+dockerRun='no'
 downloadRepositories='yes'
-bitbucketUserName='spacemig'
+bitbucketUserName='put-your-user-name-here'
 
 echo ""
 echo "------------------"
