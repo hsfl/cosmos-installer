@@ -53,9 +53,18 @@ check that the bin folder was created inside the 'cosmos' folder by entering the
 
 ```
 #!shell
-ls
-**bin**              Dockerfile  lib    README.md  scripts  tmp
-cosmos-setup.sh  include     nodes  resources  src
+ls -l
+-rw-r--r--   1 username  staff   1.0K Dec 14 23:30 Dockerfile
+-rw-r--r--   1 username  staff   2.4K Dec 14 23:30 README.md
+drwxr-xr-x  78 username  staff   2.6K Dec 15 00:15 bin/
+-rwxr-xr-x   1 username  staff   1.1K Dec 14 23:34 cosmos-setup.sh*
+drwxr-xr-x   9 username  staff   306B Dec 14 23:39 include/
+drwxr-xr-x  15 username  staff   510B Dec 15 00:19 lib/
+drwxr-xr-x  20 username  staff   680B Oct 13 09:20 nodes/
+drwxr-xr-x  10 username  staff   340B Dec 14 23:40 resources/
+drwxr-xr-x   5 username  staff   170B Dec 14 23:30 scripts/
+drwxr-xr-x  17 username  staff   578B Dec 15 00:57 src/
+drwxr-xr-x  12 username  staff   408B Dec 15 00:19 tmp/
 
 ```
 
