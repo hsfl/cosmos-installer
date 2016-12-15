@@ -54,10 +54,13 @@ else
 	# mac
 	if [[ "$OSTYPE" == "darwin"* ]]; then
 		echo "adding cosmos path to ~/.bash_profile"
-		echo "export PATH=$cosmosFolder/bin:$PATH" >>~/.bash_profile
+
+		echo "" >>~/.bash_profile
+		echo "# COSMOS PATHs" >>~/.bash_profile
+		echo "export PATH=$cosmosFolder/bin:\$PATH" >>~/.bash_profile
 		source ~/.bash_profile #won't work unless the script was started with $source cosmos-setup.sh
 	else #linux
-		echo "export PATH=$cosmosFolder/bin:$PATH" >>~/.bashrc
+		echo "export PATH=$cosmosFolder/bin:\$PATH" >>~/.bashrc
 	fi
 
 
