@@ -68,7 +68,4 @@ $ agent
 Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ arguments ]" ]
 
 ```
-
-
-
-
+this means you're set. COSMOS/core has been installed in your linux box.
