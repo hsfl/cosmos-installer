@@ -54,6 +54,11 @@ check that the bin folder was created inside the 'cosmos' folder by entering the
 ```
 #!shell
 ls -l
+```
+the output will look like
+```
+#!shell
+ls -l
 -rw-r--r--   1 username  staff   1.0K Dec 14 23:30 Dockerfile
 -rw-r--r--   1 username  staff   2.4K Dec 14 23:30 README.md
 drwxr-xr-x  78 username  staff   2.6K Dec 15 00:15 bin/
@@ -68,6 +73,7 @@ drwxr-xr-x  12 username  staff   408B Dec 15 00:19 tmp/
 
 ```
 
+
 If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake)
 
 ```
@@ -79,10 +85,13 @@ check if the $PATH is set to the cosmos/bin folder (if not you may need to open 
 
 ```
 #!shell
-
 echo $PATH
-/home/<your-user>/cosmos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
 
+output will look like
+```
+#!shell
+/home/<your-user>/cosmos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 finally, execute the cosmos agent command
@@ -90,10 +99,14 @@ finally, execute the cosmos agent command
 ```
 #!shell
 agent
-Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ arguments ]" ]
-
 ```
-if you see this line out of the agent command then you're set. COSMOS/core has been installed in your linux/macOS box.
+
+if you see this line out of the agent command then you're set
+```
+#!shell
+Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ arguments ]" ]
+```
+COSMOS/core has been installed in your linux/macOS box.
 
 *home folder on:
 
