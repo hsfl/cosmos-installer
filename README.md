@@ -49,7 +49,7 @@ you will be prompted to enter your bitbucket password (for each repository: core
 
 **Step 4** : verify installation
 
-check that the bin folder was created inside the 'cosmos' folder (if not check the tmp/cmake.log file).
+check that the bin folder was created inside the 'cosmos' folder by entering the 'ls' command
 
 ```
 #!shell
@@ -58,6 +58,14 @@ ls
 cosmos-setup.sh  include     nodes  resources  src
 
 ```
+
+If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake)
+
+```
+#!shell
+cat tmp/cmake.log
+```
+
 check if the $PATH is set to the cosmos/bin folder (if not you may need to open a new terminal window for the $PATH to update, or $ source ~/.bash_profile)
 
 ```
