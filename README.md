@@ -4,10 +4,11 @@ Installer script for COSMOS
 
 
 **Step 1** : clone the installer scripts
+open the terminal and go to your home folder
 ```
 #!shell
-
-git clone https://cosmos@bitbucket.org/cosmos/installer-linux.git cosmos
+$ cd
+$ git clone https://cosmos@bitbucket.org/cosmos/installer-linux.git cosmos
 ```
 
 **Step 2** : configure cosmos-setup.sh file
