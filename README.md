@@ -5,7 +5,7 @@ Installer script for COSMOS
 
 **Step 1** : clone the installer scripts
 
-open the terminal and make sure you are in your home folder* by entering the command
+open the terminal and make sure you are in your home folder* (see bottom note) by entering the command
 ```
 #!shell
 cd
