@@ -4,16 +4,17 @@ Installer script for COSMOS
 
 
 **Step 1** : clone the installer scripts
-open the terminal and go to your home folder
+
+open the terminal and make sure you are in your home folder (by default cosmos installs in the home folder of the current user). Clone the installer repository into the 'cosmos' folder.
 ```
 #!shell
 $ cd
-$ git clone https://cosmos@bitbucket.org/cosmos/installer-linux.git cosmos
+$ git clone https://cosmos@bitbucket.org/cosmos/installer-linux-mac.git cosmos
 ```
 
 **Step 2** : configure cosmos-setup.sh file
 
-change any of the configuration parameters listed in the cosmos-setup.sh file. You must at least change the 'bitbucketUserName'.
+Go into the 'cosmos' folder, open the cosmos-setup.sh file with your favorite editor (vi, nano, Sublime Text, etc.) and change any of the configuration parameters at the head of the file. You must at least change the 'bitbucketUserName' to be able to download the COSMOS repositories that you have access to with your bitbucket account. For faster downloads use 'no' for 'developer', 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download). If you haven't gotten access to the COSMOS repositories go to: http://cosmos-project.org/getting-started.php. These are the parameters you can change:
 
 ```
 #!shell
@@ -24,22 +25,19 @@ dockerBuild='no'
 dockerRun='no'
 downloadRepositories='yes'
 bitbucketUserName='put-your-user-name-here'
+developer='no'
 ```
 **Step 3** : run cosmos-setup.sh
-
-now run the setup file
 
 ```
 #!shell
 ./cosmos-setup.sh
 ```
-you will be prompted to enter your bitbucket password three times (for each repository: core, nodes, resources)
-
-if you set the 'dockerBuild' or 'dockerRun' to 'yes' you will also be asked to put your linux user password (sudo is executed)
+you will be prompted to enter your bitbucket password three times (for each repository: core, nodes, resources). If you set the 'dockerBuild' or 'dockerRun' to 'yes' you must have 'docker' installed and you will also be asked to put your linux user password (sudo is executed). 
 
 **Step 4** : verify installation
 
-check that the bin folder was created inside the 'cosmos' folder
+check that the bin folder was created inside the 'cosmos' folder (if not check the tmp/cmake.log file).
 
 ```
 #!shell
@@ -49,18 +47,17 @@ $ ls
 cosmos-setup.sh  include     nodes  resources  src
 
 ```
-check if the $PATH is set to the cosmos/bin folder
-
+check if the $PATH is set to the cosmos/bin folder (if not you may need to open a new terminal window for the $PATH to update, or $ source ~/.bash_profile)
 
 ```
 #!shell
 
 echo $PATH
-**/home/<your-user>/cosmos/bin**:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+/home/<your-user>/cosmos/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 ```
 
-execute the agent command
+finally, execute the cosmos agent command
 
 ```
 #!shell
@@ -69,4 +66,4 @@ $ agent
 Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ arguments ]" ]
 
 ```
-this means you're set. COSMOS/core has been installed in your linux box.
+if you see this line out of the agent command then you're set. COSMOS/core has been installed in your linux/macOS box.
