@@ -10,7 +10,7 @@ open the terminal and make sure you are in your home folder by entering the comm
 #!shell
 cd
 ```
-by default cosmos installs in the home folder of the current user. Clone the installer repository into the 'cosmos' folder.
+by default cosmos installs in the home folder of the current user. Clone the installer repository into the 'cosmos' folder. Enter the command
 ```
 #!shell
 git clone https://cosmos@bitbucket.org/cosmos/installer-linux-mac.git cosmos
