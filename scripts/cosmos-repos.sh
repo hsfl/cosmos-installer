@@ -7,6 +7,7 @@ else
 fi
 
 bitbucketUserName=$2
+developer=$3
 
 echo "------------------"
 echo "COSMOS Repositories >>>> "
@@ -17,7 +18,13 @@ then
     echo "COSMOS/src/core exists"
 else
 	echo "Cloning COSMOS/core from https://$bitbucketUserName@bitbucket.org/cosmos/core.git"
-	git clone https://$bitbucketUserName@bitbucket.org/cosmos/core.git src/core #$cosmos_source_folder/core
+
+	if [[ "$developer" = "yes" ]]; then
+		git clone https://$bitbucketUserName@bitbucket.org/cosmos/core.git src/core #$cosmos_source_folder/core
+	else
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/core.git src/core #$cosmos_source_folder/core
+	fi
 fi
 
 # clone the nodes folder locally (can be later deployed into a remote/docker/etc.)
@@ -26,7 +33,13 @@ then
     echo "COSMOS/nodes exists"
 else
 	echo "Cloning COSMOS/nodes from https://$bitbucketUserName@bitbucket.org/cosmos/nodes.git"
-	git clone https://$bitbucketUserName@bitbucket.org/cosmos/nodes.git nodes
+	
+	if [[ "$developer" = "yes" ]]; then
+		git clone https://$bitbucketUserName@bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
+	else
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
+	fi	
 fi
 
 # clone the resources folder locally (can be later deployed into a remote/docker/etc.)
@@ -35,5 +48,12 @@ then
     echo "COSMOS/resources exists"
 else
 	echo "Cloning COSMOS/resources from https://$bitbucketUserName@bitbucket.org/cosmos/resources.git"
-	git clone https://$bitbucketUserName@bitbucket.org/cosmos/resources.git resources
+
+	if [[ "$developer" = "yes" ]]; then
+		git clone https://$bitbucketUserName@bitbucket.org/cosmos/resources.git resources
+	else
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/resources.git resources
+	fi	
+
 fi

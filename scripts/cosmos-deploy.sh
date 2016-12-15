@@ -49,7 +49,17 @@ if [ "$cosmosInThePath" = "yes" ]
 	then
 	echo "COSMOS folder was found on the PATH"
 else
-	echo "COSMOS folder not found on the PATH, adding to ~/.bashrc"
-	echo "export PATH=$cosmosFolder/bin:$PATH" >>~/.bashrc
+	echo "COSMOS folder not found on the PATH"
+	
+	# mac
+	if [[ "$OSTYPE" == "darwin"* ]]; then
+		echo "adding cosmos path to ~/.bash_profile"
+		echo "export PATH=$cosmosFolder/bin:$PATH" >>~/.bash_profile
+		source ~/.bash_profile #won't work unless the script was started with $source cosmos-setup.sh
+	else #linux
+		echo "export PATH=$cosmosFolder/bin:$PATH" >>~/.bashrc
+	fi
+
+
 	#source ~/.bashrc 
 fi

@@ -6,13 +6,14 @@ dockerBuild='no'
 dockerRun='no'
 downloadRepositories='yes'
 bitbucketUserName='put-your-user-name-here'
+developer='no' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
 
 echo ""
 echo "------------------"
 echo "COSMOS folder is set to: $cosmosFolder"
 
 if [[ "$downloadRepositories" = "yes" ]]; then
-	./scripts/cosmos-repos.sh $cosmosFolder $bitbucketUserName
+	./scripts/cosmos-repos.sh $cosmosFolder $bitbucketUserName $developer
 fi
 
 # build and install COSMOS locally
