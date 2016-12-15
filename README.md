@@ -79,6 +79,7 @@ Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ ar
 if you see this line out of the agent command then you're set. COSMOS/core has been installed in your linux/macOS box.
 
 *home folder on:
+
 * mac: /Users/your_user/cosmos
 * linux: /home/your_user/cosmos
 * windows: C:/cosmos
