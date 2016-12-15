@@ -43,13 +43,13 @@ else
 fi
 
 #echo "export PATH=$cosmosFolder/bin:$PATH"
-echo "$PATH"|grep -q cosmos && cosmosInThePath='yes' #&& echo "found cosmos on the PATH"
+echo "$PATH"|grep -q cosmos/bin && cosmosInThePath='yes' #&& echo "found cosmos on the PATH"
 
 if [ "$cosmosInThePath" = "yes" ]
 	then
-	echo "COSMOS folder was found on the PATH"
+	echo "COSMOS/bin folder was found on the PATH"
 else
-	echo "COSMOS folder not found on the PATH"
+	echo "COSMOS/bin folder not found on the PATH"
 	
 	# mac
 	if [[ "$OSTYPE" == "darwin"* ]]; then
