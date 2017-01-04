@@ -1,6 +1,9 @@
 # README #
 
-Installer script for COSMOS
+Installer script for COSMOS. 
+
+Mac prerequisites: Xcode, git, cmake
+Linux prerequisites: git, cmake
 
 
 **Step 1** : clone the installer scripts
