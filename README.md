@@ -2,7 +2,7 @@
 
 Installer script for COSMOS. 
 
-Mac prerequisites: Xcode, git, cmake
+Mac prerequisites: Command Line Tools (or Xcode), git, cmake
 
 Linux prerequisites: git, cmake
 
