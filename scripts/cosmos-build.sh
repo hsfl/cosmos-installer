@@ -11,7 +11,8 @@ else
 	cosmosFolder=$1
 fi
 
-dockerBuild=$2
+#dockerBuild=$2
+verbose=$2
 
 #echo "COSMOS folder set to: $cosmosFolder"
 
@@ -19,7 +20,7 @@ cd $cosmosFolder/tmp
 
 # check if cmake exists
 if hash cmake &> /dev/null ; then
-    echo "cmake exists. going ahead with build"
+    echo "cmake exists. going ahead with build. verbose $verbose"
 else
 	echo "cmake is required but not installed. Preparing to install cmake ... "
 	# Mac Install
@@ -38,7 +39,12 @@ else
 	fi
 fi
 
-cmake $cosmosFolder/src/core &>cmake.log
-make -j12 install &>install.log
+if [ "$verbose" = "no" ]; then
+	cmake $cosmosFolder/src/core &>cmake.log
+	make -j12 install &>install.log
+else
+	cmake $cosmosFolder/src/core >cmake.log
+	make -j12 install >install.log
+fi
 
 echo "COSMOS Build done!"
