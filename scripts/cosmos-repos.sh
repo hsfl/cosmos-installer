@@ -7,7 +7,6 @@ else
 fi
 
 developer=$2
-bitbucketUserName=$3
 
 echo "------------------"
 echo "Downloading COSMOS Repositories >>>> "
@@ -19,25 +18,14 @@ then
 else
     echo "------------------"
 
-    # if ssh keys are set
-    if [[ "$bitbucketUserName" = "" ]]; then
+    # use ssh
+    if [[ "$developer" = "yes" ]]; then
 		echo "Cloning COSMOS/core from git@bitbucket.org:cosmos/core.git"
-
-        if [[ "$developer" = "yes" ]]; then
-	    	git clone git@bitbucket.org:cosmos/core.git src/core
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master git@bitbucket.org:cosmos/core.git src/core #$cosmos_source_folder/core
-		fi
-    else
-		echo "Cloning COSMOS/core from https://$bitbucketUserName@bitbucket.org/cosmos/core.git"
-
-        if [[ "$developer" = "yes" ]]; then
-	        git clone https://$bitbucketUserName@bitbucket.org/cosmos/core.git src/core #$cosmos_source_folder/core
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/core.git src/core #$cosmos_source_folder/core
-		fi
+	    git clone git@bitbucket.org:cosmos/core.git src/core
+    else # use https
+		echo "Cloning COSMOS/core from https://bitbucket.org/cosmos/core.git"
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git src/core
     fi
 fi
 
@@ -48,26 +36,15 @@ then
 else
     echo "------------------"
 
-	# if ssh keys are set
-    if [[ "$bitbucketUserName" = "" ]]; then
-    	echo "Cloning COSMOS/nodes from git@bitbucket.org:cosmos/nodes-cubesat1.git"
-		
-        if [[ "$developer" = "yes" ]]; then
-	    	git clone git@bitbucket.org:cosmos/nodes-cubesat1.git nodes/cubesat1
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master git@bitbucket.org:cosmos/nodes-cubesat1.git nodes/cubesat1
-		fi    	
-    else
-    	echo "Cloning COSMOS/nodes from https://$bitbucketUserName@bitbucket.org/cosmos/nodes.git"
-		
-		if [[ "$developer" = "yes" ]]; then
-			git clone https://$bitbucketUserName@bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
-		fi	
-	fi
+    # use ssh
+    if [[ "$developer" = "yes" ]]; then
+		echo "Cloning COSMOS/nodes/cubesat1 from git@bitbucket.org:cosmos/nodes-cubesat1.git"
+	    git clone git@bitbucket.org:cosmos/nodes-cubesat1.git nodes/cubesat1
+    else # use https
+		echo "Cloning COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1.git"
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
+    fi
 fi
 
 # clone the resources folder locally (can be later deployed into a remote/docker/etc.)
@@ -77,24 +54,13 @@ then
 else
     echo "------------------"
 
-	# if ssh keys are set
-    if [[ "$bitbucketUserName" = "" ]]; then
+    # use ssh
+    if [[ "$developer" = "yes" ]]; then
 		echo "Cloning COSMOS/resources from git@bitbucket.org:cosmos/resources.git"
-
-        if [[ "$developer" = "yes" ]]; then
-	    	git clone git@bitbucket.org:cosmos/resources.git resources
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master git@bitbucket.org:cosmos/resources.git resources
-		fi       	
-    else
-		echo "Cloning COSMOS/resources from https://$bitbucketUserName@bitbucket.org/cosmos/resources.git"
-
-		if [[ "$developer" = "yes" ]]; then
-			git clone https://$bitbucketUserName@bitbucket.org/cosmos/resources.git resources
-		else
-			echo "Cloning with depth 1 and branch master only"
-			git clone --depth 1 --branch master https://$bitbucketUserName@bitbucket.org/cosmos/resources.git resources
-		fi	
-	fi
+	    git clone git@bitbucket.org:cosmos/resources.git resources
+    else # use https
+		echo "Cloning COSMOS/resources from https://bitbucket.org/cosmos/resources.git"
+		echo "Cloning with depth 1 and branch master only"
+		git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
+    fi
 fi
