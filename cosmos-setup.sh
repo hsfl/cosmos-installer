@@ -1,6 +1,6 @@
 #!/bin/bash
 
-developer='yes' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
+developer='no' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
 verbose='no' # 'yes' will print everything 
 cosmosFolder=~/cosmos
 cosmosBuild='yes'
