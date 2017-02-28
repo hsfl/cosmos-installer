@@ -21,7 +21,7 @@ git clone https://bitbucket.org/cosmos/installer-linux-mac.git cosmos
 ```
 
 **Step 2** : run cosmos-setup.sh
-
+For regular users just run the script with no changes. For advances users and developers please check the options section.
 ```
 #!shell
 ./cosmos-setup.sh
@@ -72,22 +72,20 @@ Go into the 'cosmos' folder
 #!shell
 cd cosmos
 ```
-open the cosmos-setup.sh file with your favorite editor (vi, nano, Sublime Text, etc.) and change any of the configuration parameters at the head of the file
+open the cosmos-setup.sh file with your favourite editor (vi, nano, Sublime Text, etc.) and change any of the configuration parameters at the head of the file. You must have the ssh keys configured between your PC and bitbucket account. These are the recommended installer script settings:
 ```
 #!shell
 
+developer='yes' 
+verbose='yes'
 cosmosFolder=~/cosmos
 cosmosBuild='yes'
+downloadRepositories='yes'
 dockerBuild='no'
 dockerRun='no'
-downloadRepositories='yes'
-bitbucketUserName='put-your-user-name-here'
-developer='no'
 ```
 
-You must at least change the 'bitbucketUserName' to be able to download the COSMOS repositories that you have access to with your bitbucket account. For faster downloads use 'no' for 'developer', 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download). If you haven't gotten access to the COSMOS repositories go to: http://cosmos-project.org/getting-started.php. Make sure to save the file.
-
-you will be prompted to enter your bitbucket password (for each repository: core, nodes, resources). If you set the 'dockerBuild' or 'dockerRun' to 'yes' you must have 'docker' installed and you will also be asked to put your linux user password (sudo is executed). On the macOS if you don't have cmake installed it will install Homebrew, which will ask you to enter your computer user password.
+Make sure to save the file. If you set the 'dockerBuild' or 'dockerRun' to 'yes' you must have 'docker' installed and you will also be asked to put your linux user password (sudo is executed). On the macOS if you don't have cmake installed it will install Homebrew, which will ask you to enter your computer user password.
 
 # Troubleshooting #
 
