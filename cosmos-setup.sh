@@ -1,11 +1,10 @@
 #!/bin/bash
 
+developer='yes' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
+verbose='no' # 'yes' will print everything 
 cosmosFolder=~/cosmos
 cosmosBuild='yes'
-verbose='yes'
 downloadRepositories='yes'
-bitbucketUserName='' # if left empty it uses ssh, https otherwise
-developer='no' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
 dockerBuild='no'
 dockerRun='no'
 
@@ -19,7 +18,7 @@ echo "COSMOS folder is set to: $cosmosFolder"
 
 
 if [[ "$downloadRepositories" = "yes" ]]; then
-	./scripts/cosmos-repos.sh $cosmosFolder $developer $bitbucketUserName 
+	./scripts/cosmos-repos.sh $cosmosFolder $developer #$bitbucketUserName 
 fi
 
 # build and install COSMOS locally
