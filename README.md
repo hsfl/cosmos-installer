@@ -19,7 +19,7 @@ git clone https://bitbucket.org/cosmos/installer-linux-mac.git cosmos
 note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
 # 2. Run cosmos-setup.sh #
-For regular users just run the script with no changes. For advances users and developers please check the [options section](#options).
+For regular users just run the script with no changes. For advances users and developers please check the [options section](#markdown-header-options).
 ```
 #!shell
 ./cosmos-setup.sh
