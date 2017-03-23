@@ -1,8 +1,12 @@
 # Installer script for COSMOS. #
 
-Mac prerequisites: Command Line Tools (or Xcode), git, cmake
+This installer script will help you to download and setup and install the essential elements of COSMOS: core, nodes, resources. This setup script only works on Linux and Mac. For Windows please follow the instructions from https://bitbucket.org/cosmos/tutorial/wiki/Setup
 
-Linux prerequisites: git, cmake
+Before starting make sure you have the required tools installed:
+
+* Linux prerequisites: git, cmake
+* Mac prerequisites: Command Line Tools (or Xcode), git, cmake
+
 
 # 1. clone the installer script #
 
