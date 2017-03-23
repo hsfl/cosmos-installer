@@ -1,34 +1,32 @@
-# README #
-
-Installer script for COSMOS. 
+# Installer script for COSMOS. #
 
 Mac prerequisites: Command Line Tools (or Xcode), git, cmake
 
 Linux prerequisites: git, cmake
 
+# 1. clone the installer script #
 
-**Step 1** : clone the installer script
-
-open the terminal and make sure you are in your home folder* (see bottom note) by entering the command
+By default cosmos installs in the home folder of the current user. Open the terminal and make sure you are in your home folder* (see bottom note) by entering the command
 ```
 #!shell
 cd
 ```
-by default cosmos installs in the home folder of the current user. Clone the installer repository into the 'cosmos' folder. Enter the command
+Clone the installer repository into the 'cosmos' folder. Enter the command
 ```
 #!shell
 git clone https://bitbucket.org/cosmos/installer-linux-mac.git cosmos
 ```
+note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
-**Step 2** : run cosmos-setup.sh
-For regular users just run the script with no changes. For advances users and developers please check the options section.
+# 2. Run cosmos-setup.sh #
+For regular users just run the script with no changes. For advances users and developers please check the [options section](#options).
 ```
 #!shell
 ./cosmos-setup.sh
 ```
-This step will take a few minutes depending on your computer so just be patient.
+This step will take a few minutes depending on your computer (typically 2 min.).
 
-**Step 3** : verify installation
+# 3. Verify installation
 
 check that the bin folder was created inside the 'cosmos' folder by entering the 'ls' command
 
@@ -36,7 +34,7 @@ check that the bin folder was created inside the 'cosmos' folder by entering the
 #!shell
 ls
 ```
-the output will look like
+you should be able to see a list of files and folders 
 ```
 #!shell
 bin              Dockerfile  lib    README.md  scripts  tmp
@@ -44,8 +42,7 @@ cosmos-setup.sh  include     nodes  resources  src
 
 ```
 
-If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake). See the troubleshooting section.
-
+If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake). See the [troubleshooting section](#troubleshooting).
 
 finally, execute the cosmos agent command
 
@@ -62,6 +59,19 @@ Usage: agent [ list | dump [soh, beat, ###] | node_name agent_name "request [ ar
 COSMOS/core has been installed in your linux/macOS box.
 
 
+# 4. Using COSMOS #
+
+For developers we recommend installing Qt Creator and follow the relevant instructions on 
+
+* COSMOS general setup instructions: https://bitbucket.org/cosmos/tutorial/wiki/Setup
+* COSMOS/core setup instructions: https://bitbucket.org/cosmos/core
+* API: http://cosmos-project.org/docs/core/current/
+
+for users we recommend reading the API and tutorials 
+
+* http://cosmos-project.org/docs/core/current/
+
+The documentation is work in progress so if you have questions please contact us at cosmos@hsfl.hawaii.edu
 
 # Options #
 
