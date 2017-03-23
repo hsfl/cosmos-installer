@@ -42,7 +42,7 @@ cosmos-setup.sh  include     nodes  resources  src
 
 ```
 
-If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake). See the [troubleshooting section](#troubleshooting).
+If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake). See the [troubleshooting section](#markdown-header-troubleshooting).
 
 finally, execute the cosmos agent command
 
@@ -72,6 +72,8 @@ for users we recommend reading the API and tutorials
 * http://cosmos-project.org/docs/core/current/
 
 The documentation is work in progress so if you have questions please contact us at cosmos@hsfl.hawaii.edu
+
+-----------------------
 
 # Options #
 
