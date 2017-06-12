@@ -26,6 +26,7 @@ note that this command will create a 'cosmos' folder in your home directory and 
 For regular users just run the script with no changes. For advances users and developers please check the [options section](#markdown-header-options).
 ```
 #!shell
+cd cosmos
 ./cosmos-setup.sh
 ```
 This step will take a few minutes depending on your computer (typically 2 min.).
