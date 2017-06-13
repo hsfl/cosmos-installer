@@ -1,6 +1,7 @@
 # Installer script for COSMOS. #
 
-If you want to contribute to the COSMOS software you are considered a 'developer' then read the README-developer.md. If you just want to install COSMOS and not necessarily thinking of changing the software then you're considered a 'regular user', follow along.
+If you want to contribute to the COSMOS software you are considered a 'developer' then read the [README-developer.md](https://bitbucket.org/cosmos/installer-linux-mac/src/master/README-developer.md).
+If you just want to install COSMOS and not necessarily thinking of changing the software then you're considered a 'regular user', follow along.
 
 This installer script will help you to download and setup and install the essential elements of COSMOS: core, nodes, resources. This setup script only works on Linux and Mac. For Windows please follow the instructions from https://bitbucket.org/cosmos/tutorial/wiki/Setup
 
