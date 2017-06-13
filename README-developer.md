@@ -1,7 +1,5 @@
 # Installer script for COSMOS. #
 
-If you want to contribute to the COSMOS software you are considered a 'developer' then read the README-developer.md. If you just want to install COSMOS and not necessarily thinking of changing the software then you're considered a 'regular user', follow along.
-
 This installer script will help you to download and setup and install the essential elements of COSMOS: core, nodes, resources. This setup script only works on Linux and Mac. For Windows please follow the instructions from https://bitbucket.org/cosmos/tutorial/wiki/Setup
 
 Before starting make sure you have the required tools installed:
@@ -25,11 +23,11 @@ git clone https://bitbucket.org/cosmos/installer-linux-mac.git cosmos
 note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
 # 2. Run cosmos-setup.sh #
-For regular users just run the script with no changes. For advances users and developers please check the [options section](#markdown-header-options).
+For options please check the [options section](#markdown-header-options).
 ```
 #!shell
 cd cosmos
-./cosmos-setup.sh
+./cosmos-setup.sh developer
 ```
 This step will take a few minutes depending on your computer (typically 2 min.).
 
@@ -81,6 +79,30 @@ for users we recommend reading the API and tutorials
 The documentation is work in progress so if you have questions please contact us at cosmos@hsfl.hawaii.edu
 
 -----------------------
+
+# Options #
+
+**Optional Step 2** : configure cosmos-setup.sh file
+
+Go into the 'cosmos' folder
+```
+#!shell
+cd cosmos
+```
+open the cosmos-setup.sh file with your favourite editor (vi, nano, Sublime Text, etc.) and change any of the configuration parameters at the head of the file. You must have the ssh keys configured between your PC and bitbucket account. These are the recommended installer script settings:
+```
+#!shell
+
+developer='yes' 
+verbose='yes'
+cosmosFolder=~/cosmos
+cosmosBuild='yes'
+downloadRepositories='yes'
+dockerBuild='no'
+dockerRun='no'
+```
+
+Make sure to save the file. If you set the 'dockerBuild' or 'dockerRun' to 'yes' you must have 'docker' installed and you will also be asked to put your linux user password (sudo is executed). On the macOS if you don't have cmake installed it will install Homebrew, which will ask you to enter your computer user password.
 
 # Troubleshooting #
 
