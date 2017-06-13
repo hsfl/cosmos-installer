@@ -20,7 +20,7 @@ cd $cosmosFolder/tmp
 
 # check if cmake exists
 if hash cmake &> /dev/null ; then
-    echo "cmake exists. going ahead with build. verbose $verbose"
+    echo "cmake exists. going ahead with build. verbose $verbose. This might take a few minutes ...."
 else
 	echo "cmake is required but not installed. Preparing to install cmake ... "
 	# Mac Install
@@ -40,10 +40,10 @@ else
 fi
 
 if [ "$verbose" = "no" ]; then
-	cmake $cosmosFolder/src/core &>cmake.log
+	cmake $cosmosFolder/source/core &>cmake.log
 	make -j12 install &>install.log
 else
-	cmake $cosmosFolder/src/core >cmake.log
+	cmake $cosmosFolder/source/core >cmake.log
 	make -j12 install >install.log
 fi
 

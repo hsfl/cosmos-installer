@@ -6,26 +6,42 @@ else
 	cosmosFolder=$1
 fi
 
-developer=$2
+#developer=$2
+usertype="$1"
 
 echo "------------------"
 echo "Downloading COSMOS Repositories >>>> "
 
 # clone the source code locally (can be later deployed into a remote/docker/etc.)
-if [ -d $cosmosFolder/src/core ]
+if [ -d $cosmosFolder/source/core ]
 then
-    echo "COSMOS/src/core exists"
+    echo "COSMOS/source/core exists"
 else
     echo "------------------"
 
     # use ssh
-    if [[ "$developer" = "yes" ]]; then
+    if [[ "$usertype" = "developer" ]]; then
+    	# developer must have ssh keys enabled
 		echo "Cloning COSMOS/core from git@bitbucket.org:cosmos/core.git"
-	    git clone git@bitbucket.org:cosmos/core.git src/core
-    else # use https
-		echo "Cloning COSMOS/core from https://bitbucket.org/cosmos/core.git"
-		echo "Cloning with depth 1 and branch master only"
-		git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git src/core
+	    git clone git@bitbucket.org:cosmos/core.git source/core
+    else # not a developer use https, just download zip file
+		#echo "Cloning COSMOS/core from https://bitbucket.org/cosmos/core.git"
+		#echo "Cloning with depth 1 and branch master only"
+		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git source/core
+
+		echo "Downloading COSMOS/core from https://bitbucket.org/cosmos/core/get/master.zip"
+		# download the latest master as a zip file
+		wget -O core.zip https://bitbucket.org/cosmos/core/get/master.zip
+
+		# unzip it (goes to a folder like cosmos-core-19271d3b9a1b)
+		unzip -q -d source core.zip
+
+		# rename the folder to core (cosmos-core-19271d3b9a1b -> core)
+		mv source/cosmos-core* source/core
+		
+		# delete zip file
+		rm core.zip
+
     fi
 fi
 
@@ -37,13 +53,27 @@ else
     echo "------------------"
 
     # use ssh
-    if [[ "$developer" = "yes" ]]; then
+    if [[ "$usertype" = "developer" ]]; then
 		echo "Cloning COSMOS/nodes/cubesat1 from git@bitbucket.org:cosmos/nodes-cubesat1.git"
 	    git clone git@bitbucket.org:cosmos/nodes-cubesat1.git nodes/cubesat1
-    else # use https
-		echo "Cloning COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1.git"
-		echo "Cloning with depth 1 and branch master only"
-		git clone --depth 1 --branch master https://bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
+    else # not a developer use https, just download zip file
+		#echo "Cloning COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1.git"
+		#echo "Cloning with depth 1 and branch master only"
+		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
+
+		echo "Downloading COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip"
+		# download the latest master as a zip file
+		wget -O cubesat1.zip https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip
+
+		# unzip it 
+		unzip -q -d nodes cubesat1.zip
+
+		# rename the folder to nodes/neutron1 
+		mv nodes/cosmos-nodes-cubesat1* nodes/cubesat1
+
+		# delete zip file
+		rm cubesat1.zip
+
     fi
 fi
 
@@ -55,12 +85,25 @@ else
     echo "------------------"
 
     # use ssh
-    if [[ "$developer" = "yes" ]]; then
+    if [[ "$usertype" = "developer" ]]; then
 		echo "Cloning COSMOS/resources from git@bitbucket.org:cosmos/resources.git"
 	    git clone git@bitbucket.org:cosmos/resources.git resources
-    else # use https
-		echo "Cloning COSMOS/resources from https://bitbucket.org/cosmos/resources.git"
-		echo "Cloning with depth 1 and branch master only"
-		git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
+    else # not a developer use https, just download zip file
+		#echo "Cloning COSMOS/resources from https://bitbucket.org/cosmos/resources.git"
+		#echo "Cloning with depth 1 and branch master only"
+		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
+
+		echo "Downloading COSMOS/resources from https://bitbucket.org/cosmos/resources/get/master.zip"
+		# download the latest master as a zip file
+		wget -O resources.zip https://bitbucket.org/cosmos/resources/get/master.zip
+
+		# unzip it 
+		unzip -q resources.zip
+
+		# rename the folder to core 
+		mv cosmos-resources* resources
+
+		# delete zip file
+		rm resources.zip
     fi
 fi

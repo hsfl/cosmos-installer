@@ -1,16 +1,25 @@
 #!/bin/bash
 
-developer='no' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
+usertype="$1"
+
+if [ -z "$usertype" ]; then
+    #echo "usertype is automatically set to user"
+    usertype='user'
+fi
+
+#developer='yes' # 'yes' will clone all the repository history (more space used), 'no' will just download the last commit form the master branch (faster download)
 verbose='no' # 'yes' will print everything 
 cosmosFolder=~/cosmos
-cosmosBuild='yes'
+
 downloadRepositories='yes'
+cosmosBuild='no'
 dockerBuild='no'
 dockerRun='no'
 
-echo ""
-echo "------------------"
+#echo ""
+echo "------------------------"
 echo "COSMOS folder is set to: $cosmosFolder"
+echo "Setup as" $usertype
 
 # essentials
 # sudo apt-get update
@@ -18,7 +27,7 @@ echo "COSMOS folder is set to: $cosmosFolder"
 
 
 if [[ "$downloadRepositories" = "yes" ]]; then
-	./scripts/cosmos-repos.sh $cosmosFolder $developer #$bitbucketUserName 
+	./scripts/cosmos-repos.sh $cosmosFolder $usertype #$bitbucketUserName 
 fi
 
 # build and install COSMOS locally
