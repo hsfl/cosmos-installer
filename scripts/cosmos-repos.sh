@@ -31,8 +31,13 @@ else
 
 		echo "Downloading COSMOS/core from https://bitbucket.org/cosmos/core/get/master.zip"
 		# download the latest master as a zip file
-		#wget -O core.zip https://bitbucket.org/cosmos/core/get/master.zip
-		curl https://bitbucket.org/cosmos/core/get/master.zip -o core.zip
+
+		if [[ "$OSTYPE" == "linux-gnu" ]]; then
+			wget -O core.zip https://bitbucket.org/cosmos/core/get/master.zip
+		elif [[ "$OSTYPE" == "darwin"* ]]; then
+		     # Mac OSX
+			curl https://bitbucket.org/cosmos/core/get/master.zip -o core.zip
+		fi
 
 		# unzip it (goes to a folder like cosmos-core-19271d3b9a1b)
 		unzip -q -d source core.zip
@@ -64,8 +69,12 @@ else
 
 		echo "Downloading COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip"
 		# download the latest master as a zip file
-		#wget -O cubesat1.zip https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip
-		curl https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip -o cubesat1.zip
+		if [[ "$OSTYPE" == "linux-gnu" ]]; then
+			wget -O cubesat1.zip https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip
+		elif [[ "$OSTYPE" == "darwin"* ]]; then
+		     # Mac OSX
+			curl https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip -o cubesat1.zip
+		fi
 
 		# unzip it 
 		unzip -q -d nodes cubesat1.zip
@@ -97,8 +106,12 @@ else
 
 		echo "Downloading COSMOS/resources from https://bitbucket.org/cosmos/resources/get/master.zip"
 		# download the latest master as a zip file
-		#wget -O resources.zip https://bitbucket.org/cosmos/resources/get/master.zip
-		curl https://bitbucket.org/cosmos/resources/get/master.zip -o resources.zip
+		if [[ "$OSTYPE" == "linux-gnu" ]]; then
+			wget -O resources.zip https://bitbucket.org/cosmos/resources/get/master.zip
+		elif [[ "$OSTYPE" == "darwin"* ]]; then
+		     # Mac OSX
+			curl https://bitbucket.org/cosmos/resources/get/master.zip -o resources.zip
+		fi
 
 		# unzip it 
 		unzip -q resources.zip
