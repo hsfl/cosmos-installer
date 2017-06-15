@@ -24,7 +24,7 @@ cd
 Clone the installer repository into the 'cosmos' folder. Enter the command
 ```
 #!shell
-git clone https://bitbucket.org/cosmos/installer-linux-mac.git cosmos
+git clone https://bitbucket.org/cosmos/installer.git cosmos
 ```
 note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
