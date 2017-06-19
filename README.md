@@ -29,13 +29,21 @@ git clone https://bitbucket.org/cosmos/installer.git cosmos
 note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
 # 2. Run cosmos-setup.sh #
-For regular users just run the script with no changes. For advances users and developers please check the [options section](#markdown-header-options).
+For regular users just run the script with no changes. 
 ```
 #!shell
 cd cosmos
 ./cosmos-setup.sh
 ```
 This step will take a few minutes depending on your computer (typically 2 min.).
+
+For developers run the script with the 'developer' argument
+```
+#!shell
+./cosmos-setup.sh developer
+```
+The developer argument sets the dev variables inside the script, check the [options section](#markdown-header-options) to learn more about this.
+
 
 # 3. Verify installation
 
@@ -87,14 +95,9 @@ The documentation is work in progress so if you have questions please contact us
 -----------------------
 # Options #
 
-**Optional Step 2** : configure cosmos-setup.sh file
+**Optional Step 2** : cosmos-setup.sh file variables
 
-Go into the 'cosmos' folder
-```
-#!shell
-cd cosmos
-```
-open the cosmos-setup.sh file with your favourite editor (vi, nano, Sublime Text, etc.) and change any of the configuration parameters at the head of the file. You must have the ssh keys configured between your PC and bitbucket account. These are the recommended installer script settings:
+open the cosmos-setup.sh file with your favorite editor (vi, nano, Sublime Text, etc.) and change the configuration parameters at the head of the file. You must have the ssh keys configured between your PC and bitbucket account to be able to clone the software - developers clone the repository using ssh by default. These are the recommended installer script settings:
 ```
 #!shell
 
