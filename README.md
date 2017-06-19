@@ -29,7 +29,7 @@ git clone https://bitbucket.org/cosmos/installer.git cosmos
 note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
 # 2. Run cosmos-setup.sh #
-For regular users just run the script with no changes. 
+For regular users just run the setup script. The setup script will download the basic repositories, build the cosmos/core software and install the binaries in the 'bin' folder.
 ```
 #!shell
 cd cosmos
@@ -42,7 +42,7 @@ For developers run the script with the 'developer' argument
 #!shell
 ./cosmos-setup.sh developer
 ```
-The developer argument sets the dev variables inside the script, check the [options section](#markdown-header-options) to learn more about this.
+The developer argument sets the required variables inside the script, check the [options section](#markdown-header-options) to learn more about this.
 
 
 # 3. Verify installation
