@@ -7,10 +7,11 @@ else
 fi
 
 #developer=$2
-usertype="$1"
+usertype="$2"
 
 echo "------------------"
 echo "Downloading COSMOS Repositories >>>> "
+echo "Setup as" $usertype
 
 # clone the source code locally (can be later deployed into a remote/docker/etc.)
 if [ -d $cosmosFolder/source/core ]
