@@ -63,7 +63,7 @@ cosmos-setup.sh  include     nodes  resources  src
 
 If the bin folder is not listed check the tmp/cmake.log file to find the reason (possibly there was a problem running cmake). See the [troubleshooting section](#markdown-header-troubleshooting).
 
-finally, execute the cosmos agent command
+finally, open a new terminal window to load the cosmos/bin path into your environment. Execute the cosmos agent command
 
 ```
 #!shell
