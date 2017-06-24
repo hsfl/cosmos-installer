@@ -8,6 +8,8 @@ This installer script will help you to download and setup and install the essent
 Before starting make sure you have the required tools installed:
 
 * Linux prerequisites: git, cmake
+* These should both already be installed. To verify, open a terminal window, type git, and press enter. If it is properly installed, a list of available commands and usage will appear. 
+
 * Mac prerequisites: Command Line Tools (or Xcode), git, cmake
 
 If you do not have the required tools installed, please click on either [Mac](https://bitbucket.org/cosmos/core/wiki/install/mac) or [Linux](https://bitbucket.org/cosmos/core/wiki/install/linux_ubuntu) to
