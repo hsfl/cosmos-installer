@@ -32,7 +32,7 @@ note that this command will create a 'cosmos' folder in your home directory and 
 
 # 2. Run cosmos-setup.sh #
 
-**For regular users**
+**For Regular Users**
 
 Run the setup script. The setup script will download the basic repositories, build the cosmos/core software and install the binaries in the 'bin' folder.
 ```
@@ -42,7 +42,7 @@ cd cosmos
 ```
 This step will take a few minutes depending on your computer (typically 2 min.).
 
-**For developers**
+**For Developers**
 
 Run the script with the 'developer' argument
 ```
