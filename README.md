@@ -44,7 +44,17 @@ The setup script will download the basic repositories, build the cosmos/core sof
 
 **For Developers**
 
-You will need to create and add an [RSA](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html) key to your bitbucket account.
+You will need to create and add an [RSA](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html) key to your bitbucket account. Follow the instructions at the [RSA](https://confluence.atlassian.com/bitbucket/set-up-ssh-for-git-728138079.html) link, or type the following commands in a terminal window.
+
+
+```
+#!shell
+ssh-keygen
+cd
+cd .ssh/
+ls
+cat id_rsa.pub
+```
 
 Run the script with the 'developer' argument
 
