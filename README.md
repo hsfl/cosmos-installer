@@ -54,6 +54,7 @@ cd
 cd .ssh/
 ls
 cat id_rsa.pub
+(if you left the default file name as id_rsa, otherwise replace it with what you named it.)
 ```
 
 Run the script with the 'developer' argument
