@@ -18,7 +18,7 @@ get the required tools before you proceed.
 
 # 1. clone the installer script #
 
-By default cosmos installs in the home folder of the current user. Open the terminal and make sure you are in your home folder* (see bottom note) by entering the command
+By default cosmos installs in the home folder of the current user. Open a terminal window and make sure you are in your home folder* (see bottom note) by entering the command
 ```
 #!shell
 cd
@@ -34,15 +34,17 @@ note that this command will create a 'cosmos' folder in your home directory and 
 
 **For Regular Users**
 
-Run the setup script. The setup script will download the basic repositories, build the cosmos/core software and install the binaries in the 'bin' folder.
+Open a terminal window, change the directory to the cosmos folder, and run the setup script by using the following two commands.
 ```
 #!shell
 cd cosmos
 ./cosmos-setup.sh
 ```
-This step will take a few minutes depending on your computer (typically 2 min.).
+The setup script will download the basic repositories, build the cosmos/core software and install the binaries in the 'bin' folder. This step will take a few minutes depending on your computer (typically 2 min.).
 
 **For Developers**
+
+You will need an RSA key
 
 Run the script with the 'developer' argument
 
