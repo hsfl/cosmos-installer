@@ -46,7 +46,7 @@ This step will take a few minutes depending on your computer (typically 2 min.).
 
 Run the script with the 'developer' argument
 
-(Note: If you already ran the setup script without the 'developer' argument, you must first delete the folders "source" "resources" and "nodes" and then run the developer script.
+(Note: If you already ran the setup script without the 'developer' argument, you must first delete the folders "source" "resources" and "nodes" in the cosmos folder, and then run the developer script.
 
 ```
 #!shell
