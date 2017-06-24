@@ -8,7 +8,7 @@ This installer script will help you to download and setup and install the essent
 Before starting make sure you have the required tools installed:
 
 * Linux prerequisites: git, cmake
-* These should both already be installed. To verify, open a terminal window, type git, and press enter. If it is properly installed, a list of available commands and usage will appear. 
+* These should both already be installed. To verify, open a terminal window, type git, and press enter. If it is properly installed, a list of available commands and usage will appear. Repeat by typing cmake and verifying. 
 
 * Mac prerequisites: Command Line Tools (or Xcode), git, cmake
 
