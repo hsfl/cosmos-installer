@@ -149,6 +149,22 @@ check the tmp/cmake.log file to find the reason (possibly there was a problem ru
 cat tmp/cmake.log
 ```
 
+If you encounter the following error
+```
+#!shell
+Tell CMake where to find the compiler by setting either the environment   variable "CXX"
+```
+You may not have the correct comiler installed and are using gcc instead of g++ for C++. In a terminal window type
+```
+#!shell
+g++
+```
+If it is not currently installed, type
+```
+#!shell
+sudo apt install g++
+```
+
 check if the $PATH is set to the cosmos/bin folder (if not you may need to open a new terminal window for the $PATH to update, or $ source ~/.bash_profile)
 
 ```
