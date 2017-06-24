@@ -63,6 +63,8 @@ Run the script with the 'developer' argument
 
 ```
 #!shell
+cd
+cd cosmos
 ./cosmos-setup.sh developer
 ```
 The developer argument sets the required variables inside the script, check the [options section](#markdown-header-options) to learn more about this.
