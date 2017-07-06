@@ -28,7 +28,7 @@ Clone the installer repository into the 'cosmos' folder. Enter the command
 #!shell
 git clone https://bitbucket.org/cosmos/installer.git cosmos
 ```
-note that this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
+**note**: this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
 # 2. Run cosmos-setup.sh #
 
@@ -107,7 +107,7 @@ COSMOS/core has been installed in your linux/macOS box.
 
 For developers we recommend installing Qt Creator and follow the relevant instructions on 
 
-* COSMOS general setup instructions: https://bitbucket.org/cosmos/tutorial/wiki/Setup
+* COSMOS general setup instructions:[Windows](https://bitbucket.org/cosmos/core/wiki/install/windows) [Mac](https://bitbucket.org/cosmos/core/wiki/install/mac) [Linux (Ubuntu)](https://bitbucket.org/cosmos/core/wiki/install/linux_ubuntu)
 * COSMOS/core setup instructions: https://bitbucket.org/cosmos/core
 * API: http://cosmos-project.org/docs/core/current/
 
