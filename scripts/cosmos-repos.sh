@@ -23,21 +23,21 @@ else
     # use ssh
     if [[ "$usertype" = "developer" ]]; then
     	# developer must have ssh keys enabled
-		echo "Cloning COSMOS/core from git@bitbucket.org:cosmos/core.git"
-	    git clone git@bitbucket.org:cosmos/core.git source/core
+		echo "Cloning COSMOS/core from git@bitbucket.org:cosmos-project/core.git"
+	    git clone git@bitbucket.org:cosmos-project/core.git source/core
     else # not a developer use https, just download zip file
 		#echo "Cloning COSMOS/core from https://bitbucket.org/cosmos/core.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git source/core
 
-		echo "Downloading COSMOS/core from https://bitbucket.org/cosmos/core/get/master.zip"
+		echo "Downloading COSMOS/core from https://bitbucket.org/cosmos-project/core/get/master.zip"
 		# download the latest master as a zip file
 
 		if [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O core.zip https://bitbucket.org/cosmos/core/get/master.zip
+			wget -O core.zip https://bitbucket.org/cosmos-project/core/get/master.zip
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 		     # Mac OSX
-			curl https://bitbucket.org/cosmos/core/get/master.zip -o core.zip
+			curl https://bitbucket.org/cosmos-project/core/get/master.zip -o core.zip
 		fi
 
 		# unzip it (goes to a folder like cosmos-core-19271d3b9a1b)
@@ -61,20 +61,20 @@ else
 
     # use ssh
     if [[ "$usertype" = "developer" ]]; then
-		echo "Cloning COSMOS/nodes/cubesat1 from git@bitbucket.org:cosmos/nodes-cubesat1.git"
-	    git clone git@bitbucket.org:cosmos/nodes-cubesat1.git nodes/cubesat1
+		echo "Cloning COSMOS/nodes/cubesat1 from git@bitbucket.org:cosmos-project/nodes-cubesat1.git"
+	    git clone git@bitbucket.org:cosmos-project/nodes-cubesat1.git nodes/cubesat1
     else # not a developer use https, just download zip file
 		#echo "Cloning COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
 
-		echo "Downloading COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip"
+		echo "Downloading COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip"
 		# download the latest master as a zip file
 		if [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O cubesat1.zip https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip
+			wget -O cubesat1.zip https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 		     # Mac OSX
-			curl https://bitbucket.org/cosmos/nodes-cubesat1/get/master.zip -o cubesat1.zip
+			curl https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip -o cubesat1.zip
 		fi
 
 		# unzip it 
@@ -98,20 +98,20 @@ else
 
     # use ssh
     if [[ "$usertype" = "developer" ]]; then
-		echo "Cloning COSMOS/resources from git@bitbucket.org:cosmos/resources.git"
-	    git clone git@bitbucket.org:cosmos/resources.git resources
+		echo "Cloning COSMOS/resources from git@bitbucket.org:cosmos-project/resources.git"
+	    git clone git@bitbucket.org:cosmos-project/resources.git resources
     else # not a developer use https, just download zip file
 		#echo "Cloning COSMOS/resources from https://bitbucket.org/cosmos/resources.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
 
-		echo "Downloading COSMOS/resources from https://bitbucket.org/cosmos/resources/get/master.zip"
+		echo "Downloading COSMOS/resources from https://bitbucket.org/cosmos-project/resources/get/master.zip"
 		# download the latest master as a zip file
 		if [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O resources.zip https://bitbucket.org/cosmos/resources/get/master.zip
+			wget -O resources.zip https://bitbucket.org/cosmos-project/resources/get/master.zip
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 		     # Mac OSX
-			curl https://bitbucket.org/cosmos/resources/get/master.zip -o resources.zip
+			curl https://bitbucket.org/cosmos-project/resources/get/master.zip -o resources.zip
 		fi
 
 		# unzip it 
