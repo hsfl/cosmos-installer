@@ -44,7 +44,7 @@ else
 		unzip -q -d source core.zip
 
 		# rename the folder to core (cosmos-core-19271d3b9a1b -> core)
-		mv source/cosmos-core* source/core
+		mv source/cosmos-project-core* source/core
 		
 		# delete zip file
 		rm core.zip
@@ -81,7 +81,7 @@ else
 		unzip -q -d nodes cubesat1.zip
 
 		# rename the folder to nodes/neutron1 
-		mv nodes/cosmos-nodes-cubesat1* nodes/cubesat1
+		mv nodes/cosmos-project-nodes-cubesat1* nodes/cubesat1
 
 		# delete zip file
 		rm cubesat1.zip
@@ -118,7 +118,7 @@ else
 		unzip -q resources.zip
 
 		# rename the folder to core 
-		mv cosmos-resources* resources
+		mv cosmos-project-resources* resources
 
 		# delete zip file
 		rm resources.zip
