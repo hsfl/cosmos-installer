@@ -12,7 +12,7 @@ Before starting make sure you have the required tools installed:
 
 * Mac prerequisites: Command Line Tools (or Xcode), git, cmake
 
-If you do not have the required tools installed, please click on either [Mac](https://bitbucket.org/cosmos/core/wiki/install/mac) or [Linux](https://bitbucket.org/cosmos/core/wiki/install/linux_ubuntu) to
+If you do not have the required tools installed, please click on either [Mac](https://bitbucket.org/cosmos-project/core/wiki/install/mac) or [Linux](https://bitbucket.org/cosmos-project/core/wiki/install/linux_ubuntu) to
 get the required tools before you proceed.
 
 
@@ -26,7 +26,7 @@ cd
 Clone the installer repository into the 'cosmos' folder. Enter the command
 ```
 #!shell
-git clone https://bitbucket.org/cosmos/installer.git cosmos
+git clone https://bitbucket.org/cosmos-project/installer.git cosmos
 ```
 **note**: this command will create a 'cosmos' folder in your home directory and will copy the installer scripts.
 
@@ -107,8 +107,8 @@ COSMOS/core has been installed in your linux/macOS box.
 
 For developers we recommend installing Qt Creator and follow the relevant instructions on 
 
-* COSMOS general setup instructions:[Windows](https://bitbucket.org/cosmos/core/wiki/install/windows) [Mac](https://bitbucket.org/cosmos/core/wiki/install/mac) [Linux (Ubuntu)](https://bitbucket.org/cosmos/core/wiki/install/linux_ubuntu)
-* COSMOS/core setup instructions: https://bitbucket.org/cosmos/core
+* COSMOS general setup instructions:[Windows](https://bitbucket.org/cosmos-project/core/wiki/install/windows) [Mac](https://bitbucket.org/cosmos-project/core/wiki/install/mac) [Linux (Ubuntu)](https://bitbucket.org/cosmos-project/core/wiki/install/linux_ubuntu)
+* COSMOS/core setup instructions: https://bitbucket.org/cosmos-project/core
 * API: http://cosmos-project.org/docs/core/current/
 
 for users we recommend reading the API and tutorials 
