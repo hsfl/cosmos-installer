@@ -19,7 +19,7 @@ dockerRun='no'
 #echo ""
 echo "------------------------"
 echo "COSMOS folder is set to: $cosmosFolder"
-echo "Setup as" $usertype ", OS:" $OSTYPE
+echo "Setup as " $usertype ", OS: " $OSTYPE
 
 # essentials
 # sudo apt-get update

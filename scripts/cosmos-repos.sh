@@ -49,7 +49,7 @@ else
 		# delete zip file
 		rm core.zip
 
-    else # not a developer use https, just download zip file
+    else # not a developer use https
 		echo "Cloning COSMOS/core from https://bitbucket.org/cosmos-project/core.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git source/core
@@ -139,5 +139,46 @@ else
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
 		git clone https://bitbucket.org/cosmos-project/resources.git
 
+    fi
+fi
+
+
+# clone the source/projects/template folder locally
+if [ -d $cosmosFolder/source/projects/template ]
+then
+    echo "COSMOS/source/projects/template exists"
+else
+    echo "------------------"
+
+    # use ssh
+    if [[ "$usertype" = "developer" ]]
+    then
+		echo "Cloning COSMOS/source/projects/template from git@bitbucket.org:cosmos-project/project-template.git"
+		git clone git@bitbucket.org:cosmos-project/project-template.git source/projects/template
+    elif [[ "$usertype" = "embedded" ]]
+    then
+		# download zip to save space
+		echo "Downloading COSMOS/source/projects/template from https://bitbucket.org/cosmos-project/project-template/get/master.zip"
+		# download the latest master as a zip file
+		if [[ "$OSTYPE" == "linux" ]]; then
+			wget -O project-template.zip https://bitbucket.org/cosmos-project/project-template/get/master.zip
+		elif [[ "$OSTYPE" == "linux-gnu" ]]; then
+			wget -O project-template.zip https://bitbucket.org/cosmos-project/project-template/get/master.zip			
+		elif [[ "$OSTYPE" == "darwin"* ]]; then
+			# Mac OSX
+			curl https://bitbucket.org/cosmos-project/project-template/get/master.zip -o project-template.zip
+		fi
+
+		# unzip it 
+		unzip -q project-template.zip
+
+		# rename the folder to core 
+		mv cosmos-project-resources* project-template
+
+		# delete zip file
+		rm project-template.zip
+    else # not a developer use https, just download zip file
+		echo "Cloning COSMOS/project-template from https://bitbucket.org/cosmos-project/project-template.git"
+		git clone https://bitbucket.org/cosmos-project/project-template.git source/projects/template
     fi
 fi
