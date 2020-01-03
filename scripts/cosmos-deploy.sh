@@ -60,8 +60,8 @@ else
 		echo "export PATH=$cosmosFolder/bin:\$PATH" >>~/.bash_profile
 		source ~/.bash_profile #won't work unless the script was started with $source cosmos-setup.sh
 	else #linux
-		echo "export PATH=$cosmosFolder/bin:\$PATH" >>~/.bashrc
-		source ~/.bash_profile
+		echo "export PATH=$cosmosFolder/bin:\$PATH" >>~/.profile
+		source ~/.profile
 	fi
 
 
