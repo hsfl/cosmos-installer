@@ -1,41 +1,41 @@
-# sudo docker build -t cosmos .
-# sudo docker run -it cosmos
+FROM ubuntu:18.04
 
-FROM ubuntu:14.04
-MAINTAINER Miguel Nunes <miguel.nunes@hsfl.hawaii.edu>
+# Install CMake
+RUN apt-get update \
+  && apt-get install build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
 
-RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y build-essential cmake git gcc g++ gdb
+# Run installer
+RUN git clone git@bitbucket.org:cosmos-project/installer.git /root/cosmos
+RUN /root/cosmos/cosmos-setup.sh
 
-# Make ssh dir
-#RUN mkdir /root/.ssh/
+# Retrieve required repositories
+RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.13.1/mongo-c-driver-1.13.1.tar.gz \
+  && tar xzf mongo-c-driver-1.13.1.tar.gz
+RUN git clone https://github.com/mongodb/mongo-cxx-driver.git --branch releases/stable --depth 1
 
-# Copy over private key, and set permissions
-#ADD id_rsa /root/.ssh/id_rsa
+# Mongo C Installation
+WORKDIR /mongo-c-driver-1.13.1/cmake-build
+RUN cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. \
+  && make -j4 \
+  && make install
 
-# Create known_hosts
-#RUN touch /root/.ssh/known_hosts
+# Mongo CXX Installation
+WORKDIR /mongo-cxx-driver/build
+RUN cmake -DCMAKE_BUILD_TYPE=Release -DBSONCXX_POLY_USE_BOOST=1 -DCMAKE_INSTALL_PREFIX=/usr/local .. \
+  && make -j4 \
+  && make install
 
-# Add bitbuckets key
-#RUN ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
+# Agent Mongo Installation
+WORKDIR /root/cosmos/projects
+RUN git clone https://github.com/spjy/cosmos-mongodb.git
+WORKDIR /root/cosmos/projects/cosmos-mongodb/agent_build
+RUN cmake ../source \
+  && make -j4
 
-#RUN mkdir /root/cosmos
-#RUN mkdir /root/cosmos/src 
-#RUN mkdir /root/cosmos/src/core
+# COSMOS Web installation
+WORKDIR /root/cosmos/projects
+RUN git clone https://github.com/spjy/cosmos-web.git
+WORKDIR /root/cosmos-web
+RUN npm install
 
-#COPY src/core /root/cosmos/src/core
-#COPY nodes /root/cosmos/nodes
-#COPY resources /root/cosmos/resources
-
-# The scripts are mandatory
-COPY scripts /root/cosmos/scripts
-RUN echo "export PATH=/root/cosmos/bin:$PATH" >>~/.bashrc
-
-# run the build script
-#RUN cd /root/cosmos
-COPY cosmos-setup.sh /root/cosmos/
-#RUN chmod +x /root/cosmos-build.sh
-#RUN /root/cosmos-build.sh
-
-#RUN git clone https://spacemig@bitbucket.org/spacemig/core.git
-#RUN git clone git@bitbucket.org:cosmos/core.git
+CMD /root/cosmos/docker-init.sh
