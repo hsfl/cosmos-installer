@@ -5,8 +5,13 @@ RUN apt-get update \
   && apt-get install build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
 
 # Run installer
-RUN git clone git@bitbucket.org:cosmos-project/installer.git /root/cosmos
-RUN /root/cosmos/cosmos-setup.sh
+RUN git clone https://spencerpjy@bitbucket.org/cosmos-project/installer.git /root/cosmos
+RUN chmod +x /root/cosmos/cosmos-install.sh
+
+WORKDIR /root/cosmos/
+RUN /root/cosmos/cosmos-install.sh
+
+WORKDIR /
 
 # Retrieve required repositories
 RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.13.1/mongo-c-driver-1.13.1.tar.gz \
@@ -26,9 +31,9 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DBSONCXX_POLY_USE_BOOST=1 -DCMAKE_INSTALL_
   && make install
 
 # Agent Mongo Installation
-WORKDIR /root/cosmos/projects
+WORKDIR /root/cosmos/source/projects
 RUN git clone https://github.com/spjy/cosmos-mongodb.git
-WORKDIR /root/cosmos/projects/cosmos-mongodb/agent_build
+WORKDIR /root/cosmos/source/projects/cosmos-mongodb/agent_build
 RUN cmake ../source \
   && make -j4
 
@@ -38,4 +43,6 @@ RUN git clone https://github.com/spjy/cosmos-web.git
 WORKDIR /root/cosmos-web
 RUN npm install
 
-CMD /root/cosmos/docker-init.sh
+RUN chmod +x /root/cosmos/docker-init.sh
+
+#CMD /root/cosmos/docker-init.sh
