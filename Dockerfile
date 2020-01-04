@@ -35,18 +35,19 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DBSONCXX_POLY_USE_BOOST=1 -DCMAKE_INSTALL_
   && make install
 
 # Agent Mongo Installation
-WORKDIR /root/cosmos/projects
+WORKDIR /root/cosmos/source/tools
 RUN git clone https://github.com/spjy/cosmos-mongodb.git
-WORKDIR /root/cosmos/projects/cosmos-mongodb/agent_build
+WORKDIR /root/cosmos/source/tools/cosmos-mongodb/agent_build
 RUN cmake ../source \
   && make -j4
 
 # COSMOS Web installation
-WORKDIR /root/cosmos/projects
+WORKDIR /root/cosmos/tools
 RUN git clone https://github.com/spjy/cosmos-web.git
-WORKDIR /root/cosmos/projects/cosmos-web
+WORKDIR /root/cosmos/tools/cosmos-web
 RUN npm install
 
-RUN chmod +x /root/cosmos/docker-init.sh
+ENV PATH="/root/cosmos/tools:/root/cosmos/bin:${PATH}"
 
-#CMD /root/cosmos/docker-init.sh
+RUN chmod +x /root/cosmos/docker-entrypoint.sh
+ENTRYPOINT ["/root/cosmos/docker-entrypoint.sh"]
