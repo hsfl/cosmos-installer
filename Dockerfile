@@ -1,12 +1,15 @@
 FROM ubuntu:18.04
 
 # Install CMake
-RUN apt-get update \
-  && apt-get install build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y \
-  && snap install node --classic
+RUN apt-get update
+RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev snapd -y \
+RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN apt-get update
+RUN apt-get install nodejs -y
+RUN apt-get install git -y
 
 # Run installer
-RUN git clone https://spencerpjy@bitbucket.org/cosmos-project/installer.git /root/cosmos
+RUN git clone https://bitbucket.org/cosmos-project/installer.git /root/cosmos
 RUN chmod +x /root/cosmos/cosmos-install.sh
 
 WORKDIR /root/cosmos/
