@@ -2,11 +2,11 @@ FROM ubuntu:18.04
 
 # Install CMake
 RUN apt-get update
-RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev snapd -y \
+RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl supervisor -y
+RUN apt-get install libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get update
 RUN apt-get install nodejs -y
-RUN apt-get install git -y
 
 # Run installer
 RUN git clone https://bitbucket.org/cosmos-project/installer.git /root/cosmos
@@ -42,10 +42,10 @@ RUN cmake ../source \
   && make -j4
 
 # COSMOS Web installation
-#WORKDIR /root/cosmos/projects
-#RUN git clone https://github.com/spjy/cosmos-web.git
-#WORKDIR /root/cosmos-web
-#RUN npm install
+WORKDIR /root/cosmos/projects
+RUN git clone https://github.com/spjy/cosmos-web.git
+WORKDIR /root/cosmos/projects/cosmos-web
+RUN npm install
 
 RUN chmod +x /root/cosmos/docker-init.sh
 
