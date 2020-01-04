@@ -9,3 +9,9 @@ This installer script will clone and build the COSMOS core libraries. We also pr
 cd cosmos
 sudo docker build -t cosmos .
 ```
+
+Once the build has been completed, run the container:
+
+```
+sudo docker run --network host -it cosmos
+```
