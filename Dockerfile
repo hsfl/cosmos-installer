@@ -1,14 +1,14 @@
 FROM ubuntu:18.04
 
-# Install CMake
+# Install apt packages
 RUN apt-get update
-RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl supervisor -y
-RUN apt-get install libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
+# Utility packages and Agent Mongo dependencies
+RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
+# Node, for COSMOS Web
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
-RUN apt-get update
 RUN apt-get install nodejs -y
 
-# Run installer
+# Run COSMOS quick installer
 RUN git clone https://bitbucket.org/cosmos-project/installer.git /root/cosmos
 RUN chmod +x /root/cosmos/cosmos-install.sh
 
