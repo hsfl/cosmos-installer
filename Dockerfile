@@ -47,6 +47,9 @@ RUN git clone https://github.com/spjy/cosmos-web.git
 WORKDIR /root/cosmos/tools/cosmos-web
 RUN npm install
 
+COPY cosmos_web /usr/bin/
+RUN chmod +x /usr/bin/cosmos_web
+
 ENV PATH="/root/cosmos/tools:/root/cosmos/bin:${PATH}"
 
 RUN chmod +x /root/cosmos/docker-entrypoint.sh
