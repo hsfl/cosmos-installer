@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM ubuntu:19.04
 
 # Install apt packages
 RUN apt-get update
 # Utility packages and Agent Mongo dependencies
 RUN apt-get install curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
 # Node, for COSMOS Web
-RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install nodejs -y
 
 # Run COSMOS quick installer
