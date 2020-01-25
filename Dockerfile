@@ -35,15 +35,13 @@ RUN cmake -DCMAKE_BUILD_TYPE=Release -DBSONCXX_POLY_USE_BOOST=1 -DCMAKE_INSTALL_
   && make install
 
 # Agent Mongo Installation
-WORKDIR /root/cosmos/source/tools
-RUN git clone https://github.com/spjy/cosmos-mongodb.git
-WORKDIR /root/cosmos/source/tools/cosmos-mongodb/agent_build
+RUN git clone https://github.com/spjy/cosmos-mongodb.git /root/cosmos/source/tools/mongodb
+WORKDIR /root/cosmos/source/tools/mongodb/agent_build
 RUN cmake ../source \
   && make -j4
 
 # COSMOS Web installation
-WORKDIR /root/cosmos/tools
-RUN git clone https://github.com/spjy/cosmos-web.git
+RUN git clone https://github.com/spjy/cosmos-web.git /root/cosmos/tools/cosmos-web
 WORKDIR /root/cosmos/tools/cosmos-web
 RUN npm install
 
