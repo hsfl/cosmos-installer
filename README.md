@@ -18,7 +18,7 @@ Alternatively, you can pull the pre-built image from Docker hub if you don’t w
 $ sudo docker pull spencerpjy/cosmos
 ```
 
-Once the build has been completed, run the container with various processes:
+Once the build has been completed or you have pulled the Docker container, run the container with various processes:
 
 ```
 $ sudo docker run --network host --entrypoint agent_cpu cosmos
