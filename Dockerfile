@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:19:10
 
 # Install apt packages
 RUN apt-get update
@@ -18,8 +18,8 @@ RUN /root/cosmos/cosmos-install.sh
 WORKDIR /
 
 # Retrieve required repositories
-RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.13.1/mongo-c-driver-1.13.1.tar.gz \
-  && tar xzf mongo-c-driver-1.13.1.tar.gz
+RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.15.0/mongo-c-driver-1.15.0.tar.gz \
+  && tar xzf mongo-c-driver-1.15.0.tar.gz
 RUN git clone https://github.com/mongodb/mongo-cxx-driver.git --branch releases/stable --depth 1
 
 # Mongo C Installation
