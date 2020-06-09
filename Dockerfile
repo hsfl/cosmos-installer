@@ -1,4 +1,4 @@
-FROM ubuntu:19:10
+FROM ubuntu:19.10
 
 # Install apt packages
 RUN apt-get update
