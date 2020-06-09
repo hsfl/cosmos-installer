@@ -23,7 +23,7 @@ RUN wget https://github.com/mongodb/mongo-c-driver/releases/download/1.15.0/mong
 RUN git clone https://github.com/mongodb/mongo-cxx-driver.git --branch releases/stable --depth 1
 
 # Mongo C Installation
-WORKDIR /mongo-c-driver-1.15.1/cmake-build
+WORKDIR /mongo-c-driver-1.15.0/cmake-build
 RUN cmake -DENABLE_AUTOMATIC_INIT_AND_CLEANUP=OFF .. \
   && make -j4 \
   && make install
