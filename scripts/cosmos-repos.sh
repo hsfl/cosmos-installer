@@ -67,19 +67,19 @@ else
     # use ssh
     if [[ "$usertype" = "developer" ]]
     then
-		echo "Cloning COSMOS/nodes/cubesat1 from git@bitbucket.org:cosmos-project/nodes-cubesat1.git"
-		git clone git@bitbucket.org:cosmos-project/nodes-cubesat1.git nodes/cubesat1
+		echo "Cloning COSMOS/nodes/cubesat1 from git@github.com:hsfl/cosmos-node-cubesat1.git"
+		git clone git@github.com:hsfl/cosmos-node-cubesat1.git nodes/cubesat1
     elif [[ "$usertype" = "embedded" ]]
     then
-		echo "Downloading COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip"
+		echo "Downloading COSMOS/nodes/cubesat1 from https://github.com/hsfl/cosmos-node-cubesat1/zipball/master/"
 		# download the latest master as a zip file
 		if [[ "$OSTYPE" == "linux" ]]; then
-			wget -O cubesat1.zip https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip
+			wget -O cubesat1.zip https://github.com/hsfl/cosmos-node-cubesat1/zipball/master/
 		elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O cubesat1.zip https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip			
+			wget -O cubesat1.zip https://github.com/hsfl/cosmos-node-cubesat1/zipball/master/		
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 			 # Mac OSX
-			curl https://bitbucket.org/cosmos-project/nodes-cubesat1/get/master.zip -o cubesat1.zip
+			curl https://github.com/hsfl/cosmos-node-cubesat1/zipball/master/ -o cubesat1.zip
 		fi
 
 		# unzip it 
@@ -91,10 +91,10 @@ else
 		# delete zip file
 		rm cubesat1.zip
     else # not a developer use https, just download zip file
-		echo "Cloning COSMOS/nodes/cubesat1 from https://bitbucket.org/cosmos-project/nodes-cubesat1.git"
+		echo "Cloning COSMOS/nodes/cubesat1 from https://github.com/hsfl/cosmos-node-cubesat1.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/nodes-cubesat1.git nodes/cubesat1
-		git clone https://bitbucket.org/cosmos-project/nodes-cubesat1.git nodes/cubesat1
+		git clone https://github.com/hsfl/cosmos-node-cubesat1.git nodes/cubesat1
 
     fi
 fi
@@ -109,20 +109,20 @@ else
     # use ssh
     if [[ "$usertype" = "developer" ]]
     then
-		echo "Cloning COSMOS/resources from git@bitbucket.org:cosmos-project/resources.git"
-		git clone git@bitbucket.org:cosmos-project/resources.git resources
+		echo "Cloning COSMOS/resources from git@github.com:hsfl/cosmos-resources.git"
+		git clone git@github.com:hsfl/cosmos-resources.git resources
     elif [[ "$usertype" = "embedded" ]]
     then
 		# download zip to save space
-		echo "Downloading COSMOS/resources from https://bitbucket.org/cosmos-project/resources/get/master.zip"
+		echo "Downloading COSMOS/resources from https://github.com/hsfl/cosmos-resources/zipball/master/"
 		# download the latest master as a zip file
 		if [[ "$OSTYPE" == "linux" ]]; then
-			wget -O resources.zip https://bitbucket.org/cosmos-project/resources/get/master.zip
+			wget -O resources.zip https://github.com/hsfl/cosmos-resources/zipball/master/
 		elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O resources.zip https://bitbucket.org/cosmos-project/resources/get/master.zip			
+			wget -O resources.zip https://github.com/hsfl/cosmos-resources/zipball/master/			
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 			# Mac OSX
-			curl https://bitbucket.org/cosmos-project/resources/get/master.zip -o resources.zip
+			curl https://github.com/hsfl/cosmos-resources/zipball/master/ -o resources.zip
 		fi
 
 		# unzip it 
@@ -134,10 +134,10 @@ else
 		# delete zip file
 		rm resources.zip
     else # not a developer use https, just download zip file
-		echo "Cloning COSMOS/resources from https://bitbucket.org/cosmos/resources.git"
+		echo "Cloning COSMOS/resources from https://github.com/hsfl/cosmos-resources.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/resources.git resources
-		git clone https://bitbucket.org/cosmos-project/resources.git
+		git clone https://github.com/hsfl/cosmos-resources.git
 
     fi
 fi
