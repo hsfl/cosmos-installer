@@ -24,20 +24,20 @@ else
     if [[ "$usertype" = "developer" ]]
     then
     	# developer must have ssh keys enabled
-		echo "Cloning COSMOS/core from git@bitbucket.org:cosmos-project/core.git"
-		git clone git@bitbucket.org:cosmos-project/core.git source/core
+		echo "Cloning COSMOS/core from git@github.com:hsfl/cosmos-core.git"
+		git clone git@github.com:hsfl/cosmos-core.git
     elif [[ "$usertype" = "embedded" ]]
     then
-		echo "Downloading COSMOS/core from https://bitbucket.org/cosmos-project/core/get/master.zip"
+		echo "Downloading COSMOS/core from https://github.com/hsfl/cosmos-core/zipball/master/"
 		# download the latest master as a zip file
 
 		if [[ "$OSTYPE" == "linux" ]]; then
-			wget -O core.zip https://bitbucket.org/cosmos-project/core/get/master.zip
+			wget -O core.zip https://github.com/hsfl/cosmos-core/zipball/master/
 		elif [[ "$OSTYPE" == "linux-gnu" ]]; then
-			wget -O core.zip https://bitbucket.org/cosmos-project/core/get/master.zip
+			wget -O core.zip https://github.com/hsfl/cosmos-core/zipball/master/
 		elif [[ "$OSTYPE" == "darwin"* ]]; then
 			 # Mac OSX
-			curl https://bitbucket.org/cosmos-project/core/get/master.zip -o core.zip
+			curl https://github.com/hsfl/cosmos-core/zipball/master/ -o core.zip
 		fi
 
 		# unzip it (goes to a folder like cosmos-core-19271d3b9a1b)
@@ -50,10 +50,10 @@ else
 		rm core.zip
 
     else # not a developer use https
-		echo "Cloning COSMOS/core from https://bitbucket.org/cosmos-project/core.git"
+		echo "Cloning COSMOS/core from https://github.com/hsfl/cosmos-core.git"
 		#echo "Cloning with depth 1 and branch master only"
 		#git clone --depth 1 --branch master https://bitbucket.org/cosmos/core.git source/core
-		git clone https://bitbucket.org/cosmos-project/core.git source/core
+		git clone https://github.com/hsfl/cosmos-core.git source/core
     fi
 fi
 
