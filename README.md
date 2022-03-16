@@ -25,3 +25,7 @@ $ sudo docker run --network host --entrypoint agent_cpu cosmos
 $ sudo docker run --network host --entrypoint cosmos_web cosmos
 $ sudo docker run --network host --entrypoint agent_mongo cosmos
 ```
+
+
+Resources to getting started with docker and C/C++ development
+- https://devblogs.microsoft.com/cppblog/c-development-with-docker-containers-in-visual-studio-code/
