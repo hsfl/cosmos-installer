@@ -1,9 +1,18 @@
 FROM ubuntu:20.04
 
+LABEL description="COSMOS Container" 
+
 # Install apt packages
 RUN apt-get update && apt upgrade -y
-# Utility packages and Agent Mongo dependencies
-RUN apt-get install git cmake build-essential -y
+# Utility packages 
+# TZDATA is now required to install cmake, quick fix to not break the docker install
+RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install tzdata
+RUN apt-get install git cmake -y 
+RUN apt-get install build-essential -y 
+RUN apt-get install rsync zip -y 
+RUN apt-get install openssh-server -y 
+
+# g++ make gdb gdbserver 
 #curl build-essential wget libz-dev gcc-7 g++-7 cmake git openssl libssl-dev libsasl2-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev -y
 
 # Node, for COSMOS Web
@@ -11,11 +20,11 @@ RUN apt-get install git cmake build-essential -y
 #RUN apt-get install nodejs -y
 
 # Run COSMOS quick installer
-#RUN git clone https://bitbucket.org/cosmos-project/installer.git /root/cosmos
-#RUN chmod +x /root/cosmos/cosmos-install.sh
+RUN git clone https://github.com/hsfl/cosmos-installer.git ~/cosmos
+RUN chmod +x ~/cosmos/cosmos-install.sh
 
-#WORKDIR /root/cosmos/
-#RUN /root/cosmos/cosmos-install.sh
+WORKDIR /root/cosmos
+RUN /root/cosmos/cosmos-install.sh
 
 #WORKDIR /
 
