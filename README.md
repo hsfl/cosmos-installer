@@ -9,10 +9,10 @@ To build the docker go into the cosmos folder and run the build command (this st
 
 ```bash
 $ cd ~/cosmos
-$ sudo docker build -t cosmos .
+$ docker build -t cosmos .
 ```
 
-Alternatively, you can pull the pre-built image from Docker hub if you don’t want to wait for the build process. Note the images is a 3.5 gigabytes.
+Alternatively, you can pull the pre-built image from Docker hub if you donâ€™t want to wait for the build process. Note the images is a 3.5 gigabytes.
 
 ```bash
 $ sudo docker pull spencerpjy/cosmos
@@ -25,3 +25,7 @@ $ sudo docker run --network host --entrypoint agent_cpu cosmos
 $ sudo docker run --network host --entrypoint cosmos_web cosmos
 $ sudo docker run --network host --entrypoint agent_mongo cosmos
 ```
+
+
+Resources to getting started with docker and C/C++ development
+- https://devblogs.microsoft.com/cppblog/c-development-with-docker-containers-in-visual-studio-code/
