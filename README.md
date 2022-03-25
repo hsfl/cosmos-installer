@@ -1,4 +1,6 @@
-# Quick installer for COSMOS
+## This repository is being deprecated and moved to the new location: https://github.com/hsfl/cosmos
+
+## Quick installer for COSMOS
 
 This installer script will clone and build the COSMOS core libraries. We also provide a Docker file that runs the COSMOS core and COSMOS Web applications.
 
