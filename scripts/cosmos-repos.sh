@@ -25,7 +25,8 @@ else
     then
     	# developer must have ssh keys enabled
 		echo "Cloning COSMOS/core from git@github.com:hsfl/cosmos-core.git"
-		git clone git@github.com:hsfl/cosmos-core.git core
+                mkdir source/core
+		git clone git@github.com:hsfl/cosmos-core.git source/core
     elif [[ "$usertype" = "embedded" ]]
     then
 		echo "Downloading COSMOS/core from https://github.com/hsfl/cosmos-core/zipball/master/"
