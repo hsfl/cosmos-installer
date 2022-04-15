@@ -25,7 +25,7 @@ else
     then
     	# developer must have ssh keys enabled
 		echo "Cloning COSMOS/core from git@github.com:hsfl/cosmos-core.git"
-		git clone git@github.com:hsfl/cosmos-core.git
+		git clone git@github.com:hsfl/cosmos-core.git core
     elif [[ "$usertype" = "embedded" ]]
     then
 		echo "Downloading COSMOS/core from https://github.com/hsfl/cosmos-core/zipball/master/"
@@ -153,8 +153,8 @@ else
     # use ssh
     if [[ "$usertype" = "developer" ]]
     then
-		echo "Cloning COSMOS/source/projects/template from git@bitbucket.org:cosmos-project/project-template.git"
-		git clone git@bitbucket.org:cosmos-project/project-template.git source/projects/template
+		echo "Cloning COSMOS/source/projects/demo from git@github.com:hsfl/cosmos-demo.git"
+		git clone git@github.com:hsfl/cosmos-demo.git source/projects/demo
     elif [[ "$usertype" = "embedded" ]]
     then
 		# download zip to save space
