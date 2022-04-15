@@ -25,7 +25,7 @@ else
     then
     	# developer must have ssh keys enabled
 		echo "Cloning COSMOS/core from git@github.com:hsfl/cosmos-core.git"
-                mkdir source/core
+                mkdir source
 		git clone git@github.com:hsfl/cosmos-core.git source/core
     elif [[ "$usertype" = "embedded" ]]
     then
